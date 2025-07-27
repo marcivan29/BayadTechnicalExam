@@ -1,0 +1,9 @@
+{
+    "Credentials":
+    {
+        "username": "BayadTest2025",
+        "password": "Test2025",
+        "secret_key": "BayadTest",
+        "token_timeSpan": 1
+    }
+}

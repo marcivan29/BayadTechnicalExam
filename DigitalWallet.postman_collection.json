@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "9c630093-a94f-4b3b-a868-a1069ad42c6c",
+		"name": "DigitalWallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4518017"
+	},
+	"item": [
+		{
+			"name": "CashIn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token_value\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJheWFkVGVzdDIwMjUiLCJwYXNzd29yZCI6IlRlc3QyMDI1IiwiZXhwIjoxNzUzNTk5MDU3fQ.z2hwqOpjGFE1AeegYCFtRNACeruJPigW-GkQJ6zkbvk\",\r\n    \"user_id\": 2,\r\n    \"cashin_amount\": 442.42\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/CashIn",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"CashIn"
+					]
+				},
+				"description": "This request is to Cashin in the Digital Wallet."
+			},
+			"response": []
+		},
+		{
+			"name": "Debit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token_value\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJheWFkVGVzdDIwMjUiLCJwYXNzd29yZCI6IlRlc3QyMDI1IiwiZXhwIjoxNzUzNTk5MDU3fQ.z2hwqOpjGFE1AeegYCFtRNACeruJPigW-GkQJ6zkbvk\",\r\n    \"user_id\": 1,\r\n    \"debit_amount\": 200.44\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/Debit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"Debit"
+					]
+				},
+				"description": "This request is to Debit from Digital Wallet."
+			},
+			"response": []
+		},
+		{
+			"name": "Balance-Inquiry",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"token_value\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJheWFkVGVzdDIwMjUiLCJwYXNzd29yZCI6IlRlc3QyMDI1IiwiZXhwIjoxNzUzNjAyNzczfQ.L-n1Ek-IV9WKkjyjFgQn7Ff8ADtD5ZQjzNSS3rcQX5o\",\r\n    \"user_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/BalanceInquiry",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"BalanceInquiry"
+					]
+				},
+				"description": "To check your balance."
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateToken",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "asddsfgstyew45ywydfghfgh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"BayadTest2025\",\r\n    \"password\": \"Test2025\",\r\n    \"secret_key\": \"BayadTest\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/GenerateToken",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"GenerateToken"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token_value",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
