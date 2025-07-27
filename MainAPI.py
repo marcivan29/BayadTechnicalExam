@@ -29,8 +29,7 @@ def debit():
 # Add User
 @app.route('/AddUser', methods=['POST'])
 def add_user():
-      return Gateway.add_user(request.get_json['name'])
-
+      return Gateway.add_user(request.get_json()['token_value'], request.get_json()['name'])
 
 if __name__ == '__main__':
         app.run(debug=True)

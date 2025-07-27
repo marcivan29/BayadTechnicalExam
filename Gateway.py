@@ -62,3 +62,19 @@ def debit(token_value, user_id, debit_amount):
     
 def generate_token(username, password, secret_key):
     return jsonify({"token": TokenAuth.generate_token(username, password, secret_key)})
+
+def add_user(token_value, name):
+
+    validated_token_response = TokenAuth.validate_token(token_value)
+    if TokenAuth.validate_token(token_value) == "Valid":
+
+        if DbConnection.check_existing_user(name) == True:
+            return jsonify({"message": "Existing User."})
+        else:
+            DbConnection.create_user(name)
+            return jsonify({"message": "Successfully Added"})
+    
+    else:
+        return jsonify({"message: ": validated_token_response})
+
+    
